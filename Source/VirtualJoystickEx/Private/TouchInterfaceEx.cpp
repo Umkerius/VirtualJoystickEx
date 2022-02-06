@@ -5,12 +5,12 @@ void UTouchInterfaceEx::Activate(TSharedPtr<SVirtualJoystick> VirtualJoystick)
 {
     Super::Activate(VirtualJoystick);
 
-    auto VirtualJoystickEx = StaticCastSharedPtr<SVirtualJoystickEx>(VirtualJoystick);
-    if (VirtualJoystickEx != nullptr)
-    {
+	if (VirtualJoystick->GetType() == TEXT("SVirtualJoystickEx"))
+	{
+		auto VirtualJoystickEx = StaticCastSharedPtr<SVirtualJoystickEx>(VirtualJoystick);
 		for (const FVirtualJoystickZone& Zone : VirtualJoystickZones)
 		{
-            VirtualJoystickEx->AddZone(Zone.Name, Zone.MinRadius, Zone.MaxRadius, Zone.StartAngle, Zone.EndAngle, Zone.ActivationTime);
+			VirtualJoystickEx->AddZone(Zone.Name, Zone.MinRadius, Zone.MaxRadius, Zone.StartAngle, Zone.EndAngle, Zone.ActivationTime);
 		}
-    }
+	}
 }
