@@ -1,6 +1,6 @@
 # Unreal Engine Virtual Joystick Extension
 VirtualJoystickEx is a plugin whose main purpose is to show how to extend Unreal Engine virtual joystick functionality\
-This plugin requires UE version > 4.26 (was tested in UE5.0EA). To compile it with your project SlateCore and Slate dependencies must be added in the game module.
+This plugin requires UE version > 4.26 (was tested in 4.27 and UE5.0EA). To compile it with your project SlateCore and Slate dependencies must be added in the game module.
 
 To use VirtualJoystickEx, APlayerController::CreateVirtualJoystick method must be overridden:
 ```c++
